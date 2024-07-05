@@ -44,9 +44,9 @@ Para configurar/instalar/usar o `tesseract OCR` no `Linux Ubuntu`, você pode se
     2.8 Realmente atualizar os pacotes instalados para as suas versões mais recentes, com base na última vez que você executou `sudo apt update`. Digite o seguinte comando e pressione `Enter`: `sudo apt full-upgrade -y`
     
 
-1. **Instalar o `tesseract OCR:** Primeiro, você precisa instalar o `tesseract OCR` no seu sistema `Linux`. Isso pode ser feito usando o gerenciador de pacotes da sua distribuição. Por exemplo, no `Ubuntu`, você usaria o seguinte comando no `Terminal Emulator`: `sudo apt install tesseract-ocr -y`
+1. **Instalar o `tesseract OCR`:** Primeiro, você precisa instalar o `tesseract OCR` no seu sistema `Linux`. Isso pode ser feito usando o gerenciador de pacotes da sua distribuição. Por exemplo, no `Ubuntu`, você usaria o seguinte comando no `Terminal Emulator`: `sudo apt install tesseract-ocr -y`
 
-2. **Instalar uma Interface Gráfica para `gImageReader` (Obrigatório):** Para instalar a interface gráfica, pode instalar o gImageReader, que é uma interface gráfica para o `tesseract OCR``. Digite o seguinte comando: `sudo apt install gimagereader -y`
+2. **Instalar uma Interface Gráfica para `gImageReader` (Obrigatório):** Para instalar a interface gráfica, pode instalar o gImageReader, que é uma interface gráfica para o `tesseract OCR`. Digite o seguinte comando: `sudo apt install gimagereader -y`
 
 Lembre-se de que a qualidade do OCR depende da clareza do texto no `.pdf` original. Textos manuscritos ou com muita formatação gráfica podem não ser reconhecidos com precisão.
 
@@ -58,9 +58,9 @@ Para instalar o suporte ao idioma, por exemplo, português no `gImageReader` par
 
 1. **Abra o Terminal:** Você pode fazer isso pressionando `Ctrl+Alt+T` na maioria das distribuições do `Linux Ubuntu`.
 
-2. **Instale o Pacote de Idioma Russo do `gImageReader`:** No `Terminal Emulator`, use o gerenciador de pacotes da sua distribuição para instalar o pacote de idioma. Por exemplo, no `Linux Ubuntu` ou em sistemas baseados no Debian, você usaria o seguinte comando: `sudo apt install `tesseract`-ocr-por -y`
+2. **Instale o Pacote de Idioma Russo do `gImageReader`:** No `Terminal Emulator`, use o gerenciador de pacotes da sua distribuição para instalar o pacote de idioma. Por exemplo, no `Linux Ubuntu` ou em sistemas baseados no `Debian`, você usaria o seguinte comando: `sudo apt install tesseract-ocr-por -y`
 
-3. **Verifique a Instalação:** Para verificar se o pacote foi instalado corretamente, você pode listar os idiomas disponíveis do `gImageReader` com o comando: ``tesseract` --list-langs`
+3. **Verifique a Instalação:** Para verificar se o pacote foi instalado corretamente, você pode listar os idiomas disponíveis do `gImageReader` com o comando: `tesseract --list-langs`
 
     Você deve ver `por` listado entre os idiomas disponíveis.
 
@@ -80,13 +80,14 @@ Para instalar o suporte ao idioma, por exemplo, português no `gImageReader` par
 
 5. **Salvar o Documento:** Após o reconhecimento OCR, você pode salvar o documento. No caso de querer salvar como `.pdf` pesquisável, procure pela opção 'Salvar' ou 'Exportar como `.pdf`' nas opções de menu do `gImageReader`.
 
+
 ### 1.1.2 Instalar o idioma russo
 
 Para instalar o suporte ao idioma, por exemplo, russo no `gImageReader` para reconhecimento OCR, você precisa instalar o pacote de idioma específico do `gImageReader` para russo. Aqui estão as etapas que você deve seguir no Linux:
 
 1. **Abra o Terminal:** Você pode fazer isso pressionando `Ctrl+Alt+T` na maioria das distribuições do `Linux`.
 
-2. **Instale o Pacote de Idioma Russo do `gImageReader`:** No `Terminal Emulator`, use o gerenciador de pacotes da sua distribuição para instalar o pacote de idioma. Por exemplo, no Ubuntu ou em sistemas baseados no Debian, você usaria o seguinte comando: `sudo apt install `tesseract`-ocr-rus -y`
+2. **Instale o Pacote de Idioma Russo do `gImageReader`:** No `Terminal Emulator`, use o gerenciador de pacotes da sua distribuição para instalar o pacote de idioma. Por exemplo, no `Ubuntu` ou em sistemas baseados no `Debian`, você usaria o seguinte comando: `sudo apt install tesseract-ocr-rus -y`
 
 3. **Verifique a Instalação:** Para verificar se o pacote foi instalado corretamente, você pode listar os idiomas disponíveis do `gImageReader` com o comando: ``tesseract` --list-langs`
 
@@ -115,7 +116,7 @@ Para configurar/instalar/usar o `gImageReader` no `Linux Ubuntu` sem precisar di
 2. Digite o seguinte comando e pressione `Enter`:
 
     ```
-    sudo apt clean                                                            
+    sudo apt clean
     sudo apt autoclean
     sudo apt autoremove -y
     sudo apt update
@@ -275,8 +276,11 @@ Para converter um arquivo `.pdf` para texto plano (Plain Text) usando o `tessera
 2. **Defina o(s) idioma(s)**: `eng` para inglês, `por` para português, `rus` para russo, `eng+rus` para inglês e russo etc.: `idioma_ocr="rus"`
 
   - **`eng`**: especifica que o documento está em inglês
+  
   - **`por`**: especifica que o documento está em português
+  
   - **`rus`**: especifica que o documento está em russo (costuma dar problemas, por conta do alfabeto cirílico)
+  
   - **`eng+rus`**: especifica que o documento está em inglês e em russo (costuma dar problemas, por conta do alfabeto cirílico)
 
 3. **Extrai o nome base do arquivo sem a extensão `.pdf`** impa ou cria o arquivo antes de começar a adicionar conteúdo: `nome_base="${nome_do_arquivo%.pdf}"`
@@ -320,8 +324,11 @@ Para converter um arquivo `.pdf` para texto plano (Plain Text) usando o `tessera
 2. **Defina o(s) idioma(s)**: `eng` para inglês, `por` para português, `rus` para russo, `eng+rus` para inglês e russo etc.: `idioma_ocr="eng+rus"`
 
   - **`eng`**: especifica que o documento está em inglês
+  
   - **`por`**: especifica que o documento está em português
+  
   - **`rus`**: especifica que o documento está em russo (costuma dar problemas, por conta do alfabeto cirílico)
+  
   - **`eng+rus`**: especifica que o documento está em inglês e em russo (costuma dar problemas, por conta do alfabeto cirílico)
 
 3. **Extrai o nome base do arquivo sem a extensão `.pdf`** impa ou cria o arquivo antes de começar a adicionar conteúdo: `nome_base="${nome_do_arquivo%.pdf}"`
