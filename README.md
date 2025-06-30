@@ -18,6 +18,28 @@ O `tesseract OCR` é um reconhecedor óptico de caracteres (OCR) de código aber
 
 O `gImageReader` é uma aplicação de código aberto que oferece uma interface amigável para a extração de texto de imagens ou arquivos `.pdf`. Ele utiliza tecnologias de reconhecimento óptico de caracteres (OCR) para digitalizar documentos e converter o texto contido neles em formato editável. Com recursos como suporte a vários idiomas e opções de formatação, o gImageReader é uma ferramenta útil para transformar documentos digitalizados em texto pesquisável e editável.
 
+### `translate-shell`
+
+O `translate-shell` é uma ferramenta de linha de comando de código aberto que oferece a capacidade de traduzir texto e palavras entre vários idiomas diretamente do `Terminal Emulator`. Ele utiliza serviços de tradução _online_, como o `Google Translate`, para fornecer traduções rápidas e precisas. O `translate-shell` suporta uma ampla variedade de idiomas e pode ser usado tanto para traduções simples de palavras e frases quanto para traduções mais complexas de texto completo. Além disso, ele oferece opções avançadas, como tradução de áudio, detecção automática de idioma e pronúncia de palavras, tornando-se uma ferramenta útil para estudantes, viajantes e qualquer pessoa que precise de traduções instantâneas e convenientes diretamente do `Terminal Emulator`.
+
+### `pdftotext`
+
+O `pdftotext` é uma ferramenta de linha de comando, geralmente parte do pacote `Poppler` ou `Xpdf`, que converte o conteúdo de arquivos PDF em texto simples. Ele extrai o texto mantendo a ordem de leitura e pode preservar ou não a formatação de colunas e quebras de linha, conforme opções configuráveis. É muito útil para automatizar a extração de texto de documentos PDF em _scripts_ e fluxos de trabalho de análise de dados ou indexação.
+
+### `pdfimages`
+
+O `pdfimages` é uma ferramenta para extrair imagens de arquivos PDF. Caso seu PDF contenha imagens e você queira extraí-las, pode ser útil antes de uma conversão com OCR, como no caso de um PDF digitalizado.
+
+### `qpdf`
+
+O `qpdf` é uma ferramenta para manipular arquivos PDF de maneira avançada. Você pode usá-lo para fazer operações como quebra de PDFs, mesclagem, e até mesmo para manipular metadados.
+
+### `pdfunite`
+
+O `pdfunite` é uma ferramenta de linha de comando, integrante do pacote Poppler, que permite mesclar vários arquivos PDF em um único documento. Basta informar na chamada os arquivos de entrada e o nome do PDF de saída. É ideal para scripts e fluxos de trabalho automatizados de organização e consolidação de documentos.
+
+**ATENÇÃO**: Você pode utilizar o `pdftotext` e/ou o `tesseract` em arquivos `.pdf` para converter em `.txt` e depois traduzir para o português brasileiro com os comandos do `translate-shell` que serão apresentados depois do passo a passo de como instalar o `translate-shell`.
+
 
 ## 1. Como configurar/instalar/usar o `tesseract OCR` no `Linux Ubuntu` [1][3]
 
@@ -97,7 +119,11 @@ Para instalar o suporte ao idioma, por exemplo, português no `gImageReader` par
 
 1. **Abra o Terminal:** Você pode fazer isso pressionando `Ctrl+Alt+T` na maioria das distribuições do `Linux Ubuntu`.
 
-2. **Instale o Pacote de Idioma Russo do `gImageReader`:** No `Terminal Emulator`, use o gerenciador de pacotes da sua distribuição para instalar o pacote de idioma. Por exemplo, no `Linux Ubuntu` ou em sistemas baseados no `Debian`, você usaria o seguinte comando: `sudo apt install tesseract-ocr-por -y`
+2. **Instale o Pacote de Idioma Russo do `gImageReader`:** No `Terminal Emulator`, use o gerenciador de pacotes da sua distribuição para instalar o pacote de idioma. Por exemplo, no `Linux Ubuntu` ou em sistemas baseados no `Debian`, você usaria o seguinte comando:
+
+    ```bash
+    sudo apt install tesseract-ocr-por -y
+    ```
 
 3. **Verifique a Instalação:** Para verificar se o pacote foi instalado corretamente, você pode listar os idiomas disponíveis do `gImageReader` com o comando: `tesseract --list-langs`
 
@@ -126,7 +152,11 @@ Para instalar o suporte ao idioma, por exemplo, russo no `gImageReader` para rec
 
 1. **Abra o Terminal:** Você pode fazer isso pressionando `Ctrl+Alt+T` na maioria das distribuições do `Linux`.
 
-2. **Instale o Pacote de Idioma Russo do `gImageReader`:** No `Terminal Emulator`, use o gerenciador de pacotes da sua distribuição para instalar o pacote de idioma. Por exemplo, no `Ubuntu` ou em sistemas baseados no `Debian`, você usaria o seguinte comando: `sudo apt install tesseract-ocr-rus -y`
+2. **Instale o Pacote de Idioma Russo do `gImageReader`:** No `Terminal Emulator`, use o gerenciador de pacotes da sua distribuição para instalar o pacote de idioma. Por exemplo, no `Ubuntu` ou em sistemas baseados no `Debian`, você usaria o seguinte comando:
+
+    ```bash
+    sudo apt install tesseract-ocr-rus -y
+    ```
 
 3. **Verifique a Instalação:** Para verificar se o pacote foi instalado corretamente, você pode listar os idiomas disponíveis do `gImageReader` com o comando: ``tesseract` --list-langs`
 
@@ -176,7 +206,11 @@ Para configurar/instalar/usar o `gImageReader` no `Linux Ubuntu` sem precisar di
 
   Para converter um arquivo `.pdf` para texto plano (`Plain Text`) usando o `tesseract OCR` pelo `Terminal Emulator` do Linux, você precisará seguir alguns passos, pois o `tesseract` não processa diretamente arquivos `.pdf`. Em vez disso, ele funciona com imagens. Portanto, você terá que converter seu `.pdf` para um formato de imagem antes de usar o `tesseract` para extrair o texto. Aqui está o procedimento geral:
 
-1. **Converter o `.pdf` para Imagens:** Você pode usar a ferramenta `pdftoppm` para converter as páginas do `.pdf` em imagens `.png` ou `.jpeg`. Aqui está um exemplo de como fazer isso para o formato `.png`: `pdftoppm -r 300 -png arquivo.pdf pagina`
+1. **Converter o `.pdf` para Imagens:** Você pode usar a ferramenta `pdftoppm` para converter as páginas do `.pdf` em imagens `.png` ou `.jpeg`. Aqui está um exemplo de como fazer isso para o formato `.png`:
+
+    ```bash
+    pdftoppm -r 300 -png arquivo.pdf pagina
+    ```
 
     Isso criará uma série de arquivos de imagem nomeados `"pagina-1.png"`, `"pagina-2.png"` etc., cada um correspondendo a uma página do seu `.pdf`.
 
